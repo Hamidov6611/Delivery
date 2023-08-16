@@ -36,6 +36,7 @@ const Navbar = () => {
             <div className="flex w-[45%] justify-between items-center">
               <div className="flex">
                 <Link
+                onClick={() => setIsMenu(false)}
                   href={"/services"}
                   className="mr-2 hover:text-gray-900 text-[20px] text-white"
                 >
@@ -50,6 +51,7 @@ const Navbar = () => {
                 />
               </div>
               <Link
+               onClick={() => setIsMenu(false)}
                 href={"/calculator"}
                 className="mr-5 hover:text-gray-900 font-medium text-[20px] text-white"
               >
@@ -62,6 +64,7 @@ const Navbar = () => {
                 Отзывы
               </Link>
               <Link
+               onClick={() => setIsMenu(false)}
                 href={"/blog"}
                 className="mr-5 hover:text-gray-900 font-medium text-[20px] text-white"
               >
@@ -104,8 +107,8 @@ const Navbar = () => {
 
       <div className="h-[80px] lg:hidden">
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar sx={{ position: "fixed", top: 0, }} className={`${isMenu ? 'bg-[#050038]' : 'bg-white'}`}>
-            <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ position: "fixed", top: 0, }} className={`${isMenu ? 'bg-[#050038]' : 'bg-white'} w-[100%] shadow-xl py-2 px-3 sticky top-0 z-50`}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Link href={"/"}>
                 <div className="w-[38%]">
                   {isMenu ? 
@@ -131,7 +134,7 @@ const Navbar = () => {
                 {!isMenu && (
                   <Link
                     href={"/"}
-                    className="bg-[#1348F9] mr-5 py-2 px-4 rounded-full"
+                    className="bg-[#1348F9] mr-5 py-2 px-4 rounded-full text-white font-semibold"
                   >
                     Регистрация
                   </Link>
@@ -158,8 +161,8 @@ const Navbar = () => {
                   </IconButton>
                 )}
               </div>
-            </Toolbar>
-          </AppBar>
+            </div>
+          </div>
         </Box>
       </div>
 
@@ -186,8 +189,8 @@ const Navbar = () => {
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
 
             <Link
-            onClick={() => setIsMenu(false)}
-              href={"/calculator"}
+             onClick={() => setIsMenu(false)}
+              href={"/calculaor"}
               className="mr-5  text-[20px] text-white  font-semibold"
             >
               Калькулятор
@@ -203,7 +206,7 @@ const Navbar = () => {
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
 
             <Link
-            onClick={() => setIsMenu(false)}
+             onClick={() => setIsMenu(false)}
               href={"/blog"}
               className="mr-5 font-semibold text-[20px] text-white"
             >
