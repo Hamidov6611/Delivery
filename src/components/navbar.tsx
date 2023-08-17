@@ -9,21 +9,21 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import React, { FC, useState } from "react";
-import LanguageIcon from '@mui/icons-material/Language';
+import LanguageIcon from "@mui/icons-material/Language";
 
 const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
   const handleClick = () => setIsMenu((prev) => !prev);
 
-  const [isLang, setIsLang] = useState(false)
-  const changeLang = () => setIsLang(prev => !prev)
+  const [isLang, setIsLang] = useState(false);
+  const changeLang = () => setIsLang((prev) => !prev);
   return (
     <div>
       <div
         className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center`}
       >
         <div className="w-[100%] md:w-[90%] mx-auto lg:flex items-center hidden">
-          <Link href={'/'} className="w-[18%]">
+          <Link href={"/"} className="w-[18%]">
             <Image
               src={"/logo1.svg"}
               alt="logo"
@@ -36,7 +36,6 @@ const Navbar = () => {
             <div className="flex w-[45%] justify-between items-center">
               <div className="flex">
                 <Link
-                onClick={() => setIsMenu(false)}
                   href={"/services"}
                   className="mr-2 hover:text-gray-900 text-[20px] text-white"
                 >
@@ -51,20 +50,18 @@ const Navbar = () => {
                 />
               </div>
               <Link
-               onClick={() => setIsMenu(false)}
                 href={"/calculator"}
                 className="mr-5 hover:text-gray-900 font-medium text-[20px] text-white"
               >
                 Калькулятор
               </Link>
               <Link
-                href={"/"}
+                href={"/reviews"}
                 className="mr-5 hover:text-gray-900 font-medium text-[20px] text-white"
               >
                 Отзывы
               </Link>
               <Link
-               onClick={() => setIsMenu(false)}
                 href={"/blog"}
                 className="mr-5 hover:text-gray-900 font-medium text-[20px] text-white"
               >
@@ -107,26 +104,32 @@ const Navbar = () => {
 
       <div className="h-[80px] lg:hidden">
         <Box sx={{ flexGrow: 1 }}>
-          <div style={{ position: "fixed", top: 0, }} className={`${isMenu ? 'bg-[#050038]' : 'bg-white'} w-[100%] shadow-xl py-2 px-3 sticky top-0 z-50`}>
+          <div
+            style={{ position: "fixed", top: 0 }}
+            className={`${
+              isMenu ? "bg-[#050038]" : "bg-white"
+            } w-[100%] shadow-xl py-2 px-3 sticky top-0 z-50`}
+          >
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Link href={"/"}>
                 <div className="w-[38%]">
-                  {isMenu ? 
-                  <Image
-                  src={"/logo1.svg"}
-                  alt="logo"
-                  width={118}
-                  height={108}
-                  className="object-cover"
-                /> :
-                <Image
-                    src={"/logo7.svg"}
-                    alt="logo"
-                    width={118}
-                    height={108}
-                    className="object-cover"
-                  />  
-                }
+                  {isMenu ? (
+                    <Image
+                      src={"/logo1.svg"}
+                      alt="logo"
+                      width={118}
+                      height={108}
+                      className="object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={"/logo7.svg"}
+                      alt="logo"
+                      width={118}
+                      height={108}
+                      className="object-cover"
+                    />
+                  )}
                 </div>
               </Link>
 
@@ -144,7 +147,7 @@ const Navbar = () => {
                     onClick={handleClick}
                     size="large"
                     edge="start"
-                    sx={{color:"white"}}
+                    sx={{ color: "white" }}
                     aria-label="menu"
                   >
                     <ClearIcon fontSize="medium" />
@@ -154,7 +157,7 @@ const Navbar = () => {
                     onClick={handleClick}
                     size="large"
                     edge="start"
-                    sx={{color:"black"}}
+                    sx={{ color: "black" }}
                     aria-label="menu"
                   >
                     <MenuIcon fontSize="medium" />
@@ -189,8 +192,8 @@ const Navbar = () => {
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
 
             <Link
-             onClick={() => setIsMenu(false)}
-              href={"/calculaor"}
+              onClick={() => setIsMenu(false)}
+              href={"/calculator"}
               className="mr-5  text-[20px] text-white  font-semibold"
             >
               Калькулятор
@@ -198,7 +201,8 @@ const Navbar = () => {
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
 
             <Link
-              href={"/"}
+            onClick={() => setIsMenu(false)}
+              href={"/reviews"}
               className="mr-5   text-[20px] text-white  font-semibold"
             >
               Отзывы
@@ -206,7 +210,7 @@ const Navbar = () => {
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
 
             <Link
-             onClick={() => setIsMenu(false)}
+              onClick={() => setIsMenu(false)}
               href={"/blog"}
               className="mr-5 font-semibold text-[20px] text-white"
             >
@@ -214,21 +218,28 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="mt-9 w-[100%] flex justify-center pt-9 flex-col items-center" >
+          <div className="mt-9 w-[100%] flex justify-center pt-9 flex-col items-center">
             <Link href={"/"} className="w-[200px]">
-              <p className="bg-[#1348F9] text-white py-3 px-8 text-center rounded-full font-semibold mb-8  ">Регистрация</p>
+              <p className="bg-[#1348F9] text-white py-3 px-8 text-center rounded-full font-semibold mb-8  ">
+                Регистрация
+              </p>
             </Link>
 
-            <Link href={'/'} className="flex">
+            <Link href={"/"} className="flex">
               <p className="text-white text-md font-semibold mr-5">Логин</p>
-              <p className="text-white text-md font-semibold">Связаться с нами!</p>
+              <p className="text-white text-md font-semibold">
+                Связаться с нами!
+              </p>
             </Link>
 
             <div className="mt-8 flex items-center">
-              <LanguageIcon fontSize="large" sx={{color:"white", marginRight:"20px"}} />
+              <LanguageIcon
+                fontSize="large"
+                sx={{ color: "white", marginRight: "20px" }}
+              />
               <div className="flex">
                 <Image
-                 onClick={changeLang}
+                  onClick={changeLang}
                   src={"/ru.svg"}
                   alt="ru"
                   width={29}
@@ -236,7 +247,7 @@ const Navbar = () => {
                   className="cursor-pointer mr-3"
                 />
                 <Image
-                onClick={changeLang}
+                  onClick={changeLang}
                   src={"/Vector.svg"}
                   alt="ru"
                   width={15}
@@ -245,48 +256,48 @@ const Navbar = () => {
                 />
               </div>
             </div>
-              {isLang && (
-                  <div className="bg-white h-[135px] w-[250px] rounded-lg ml-5 p-2 mt-6 flex flex-col">
-                  <div className="flex mb-4 mt-2">
-                    <Image
-                      src={"/gl.svg"}
-                      alt="ru"
-                      width={29}
-                      height={20}
-                      className="cursor-pointer mr-3"
-                    />
-                    <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
+            {isLang && (
+              <div className="bg-white h-[135px] w-[250px] rounded-lg ml-5 p-2 mt-6 flex flex-col">
+                <div className="flex mb-4 mt-2">
+                  <Image
+                    src={"/gl.svg"}
+                    alt="ru"
+                    width={29}
+                    height={20}
+                    className="cursor-pointer mr-3"
+                  />
+                  <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
                     Netherlands
-                    </p>
-                  </div>
- 
-                  <div className="flex mb-4 ">
-                    <Image
-                      src={"/fr.svg"}
-                      alt="ru"
-                      width={29}
-                      height={20}
-                      className="cursor-pointer mr-3"
-                    />
-                    <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                    France
-                    </p>
-                  </div>
- 
-                  <div className="flex mb-4 ">
-                    <Image
-                      src={"/en.svg"}
-                      alt="ru"
-                      width={29}
-                      height={20}
-                      className="cursor-pointer mr-3"
-                    />
-                    <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
-                      England
-                    </p>
-                  </div>
+                  </p>
                 </div>
-                 )}
+
+                <div className="flex mb-4 ">
+                  <Image
+                    src={"/fr.svg"}
+                    alt="ru"
+                    width={29}
+                    height={20}
+                    className="cursor-pointer mr-3"
+                  />
+                  <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
+                    France
+                  </p>
+                </div>
+
+                <div className="flex mb-4 ">
+                  <Image
+                    src={"/en.svg"}
+                    alt="ru"
+                    width={29}
+                    height={20}
+                    className="cursor-pointer mr-3"
+                  />
+                  <p className="text-black  font-medium text-[15px] sm:text-[17px] md:text-[19px]">
+                    England
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

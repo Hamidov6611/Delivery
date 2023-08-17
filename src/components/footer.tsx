@@ -1,18 +1,23 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Footer = () => {
   const [isLang, setIsLang] = useState(false)
   const changeLang = () => setIsLang(prev => !prev)
+  const pathname = usePathname()
+
+  console.log(pathname)
+
   return (
-    <div className="flex relative mt-[330px]">
-      <div className="w-[90%] md:w-[60%] mx-auto border h-[413px] bg-white ml-[5%] md:ml-[20%] absolute top-[-330px] rounded-lg shadow-2xl">
+    <div className={`flex relative ${pathname !== '/calculator' && 'mt-[330px]'}`}>
+     { pathname !== '/calculator' &&  ( <div className="w-[90%] md:w-[60%] mx-auto border h-[413px] bg-white ml-[5%] md:ml-[20%] absolute top-[-330px] rounded-lg shadow-2xl">
         <p className="text-center text-[#1348F9] text-[20px] sm:text-[24px] md:text-[32px] lg-text-[40px] mt-6 font-semibold">
           Связаться с нами!
         </p>
-        <form className="mt-1 flex flex-col p-6 relative">
+        <form className="mt-1 flex flex-col p-3 sm:p-6 relative">
           <div className="flex flex-col sm:flex-row sm:justify-between">
             <div className="w-[100%] sm:w-[38%] mb-4 sm:mb-0 flex flex-col">
               <p className="mb-2 text-[#344054] font-medium">Ваше имя</p>
@@ -45,7 +50,7 @@ const Footer = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div>)}
 
       <div className="w-[100%] min-h-[527px] bg-[#0F172A]">
         <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 pt-36">

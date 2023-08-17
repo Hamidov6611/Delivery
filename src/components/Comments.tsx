@@ -8,7 +8,7 @@ const Comments = () => {
     <div className="w-[90%] mx-auto ">
         <p className=" mt-8 md:mt-36 text-center font-semibold md:font-bold text-[18px] mb-4 sm:mb-0 sm:text-[24px] md:text-[28px] lg:text-[55px] text-[#2F2E40]">Что говорят наши клиенты</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-1">
+        <div className="grid grid-cols-1 sm:grid-cols6 md:grid-cols-4 gap-x-8 gap-y-1">
             <div className="shadow-2xl p-5 rounded-lg border my-8 flex flex-col">
                 <div className="flex justify-between items-center">
                     <div className=" relative flex justify-between"> 

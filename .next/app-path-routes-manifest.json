@@ -1,7 +1,0 @@
-{
-  "/page": "/",
-  "/calculator/page": "/calculator",
-  "/blog/[id]/page": "/blog/[id]",
-  "/blog/page": "/blog",
-  "/services/page": "/services"
-}

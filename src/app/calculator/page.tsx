@@ -1,11 +1,10 @@
-import { HorizontalLinearStepper } from '@/components'
-import React from 'react'
+import { Stepper } from '@/components'
 
 const Calculator = () => {
   return (
     <div>
         <div className={`w-[90%] mx-auto py-9`}>
-        <HorizontalLinearStepper />
+          <Stepper />
         </div>
     </div>
   )
