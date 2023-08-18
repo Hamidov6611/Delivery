@@ -10,7 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import React, { FC, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
-import { Login, Register } from ".";
+import { ForgotPassword, Login, Register } from ".";
 
 
 
@@ -19,6 +19,7 @@ const Navbar = () => {
   const handleClick = () => setIsMenu((prev) => !prev);
   const [isRegister, setIsRegister] = useState<boolean>(false)
   const [isLogin, setIsLogin] = useState<boolean>(false)
+  const [isForgotPassword, setIsForgotPassword] = useState<boolean>(false)
 
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
@@ -115,6 +116,10 @@ const Navbar = () => {
 
       {isLogin && (
         <Login setIsLogin={setIsLogin} setIsRegister={setIsRegister}/>
+      )}
+
+      {isForgotPassword && (
+        <ForgotPassword setIsForgotPassword={setIsForgotPassword} setIsLogin={setIsLogin}/>
       )}
 
       <div className="h-[80px] lg:hidden">
