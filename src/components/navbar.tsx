@@ -10,10 +10,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import React, { FC, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
+import { Login, Register } from ".";
+
+
 
 const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
   const handleClick = () => setIsMenu((prev) => !prev);
+  const [isRegister, setIsRegister] = useState<boolean>(false)
+  const [isLogin, setIsLogin] = useState<boolean>(false)
 
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
@@ -75,12 +80,13 @@ const Navbar = () => {
               >
                 Вход
               </Link>
-              <Link
-                href={"/"}
+              <button
+                // href={"/"}
+                onClick={() => setIsRegister(prev => !prev)}
                 className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]"
               >
                 Регистрация
-              </Link>
+              </button>
               <div className="flex">
                 <Image
                   src={"/ru.svg"}
@@ -101,6 +107,15 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+
+      {isRegister && (
+        <Register setIsRegister={setIsRegister} setIsLogin={setIsLogin} />
+      )}
+
+      {isLogin && (
+        <Login setIsLogin={setIsLogin} setIsRegister={setIsRegister}/>
+      )}
 
       <div className="h-[80px] lg:hidden">
         <Box sx={{ flexGrow: 1 }}>
@@ -135,12 +150,12 @@ const Navbar = () => {
 
               <div>
                 {!isMenu && (
-                  <Link
-                    href={"/"}
+                  <button
+                    onClick={() => setIsRegister(true)}
                     className="bg-[#1348F9] mr-5 py-2 px-4 rounded-full text-white font-semibold"
                   >
                     Регистрация
-                  </Link>
+                  </button>
                 )}
                 {isMenu ? (
                   <IconButton
