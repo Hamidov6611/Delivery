@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 const About = () => {
   return (
     <>
       <div className="w-[90%] mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2  lg:grid-cols-3 xl:gap-x-8 mt-[100px]">
         <div className="bg-#FBFBFB border p-5 rounded-2xl">
-          <div className="w-[60px] h-[60px] flex items-center justify-center bg-heroGreey rounded-[16px]">
-            1
-          </div>
+            <div className="relative w-[83px] h-[74px]">
+              <Image src={'/1.svg'} alt={"1"} className="w-[100%] h-[100%]" width={100} height={100} />
+            </div>
           <p className="text-[#2F2E40] font-semibold text-[20px] md:text-[25px] line-clamp-1 mt-3 ">
             Эффективные экспресс-перевозки:
           </p>
@@ -16,9 +18,9 @@ const About = () => {
           </p>
         </div>
         <div className="bg-#FBFBFB border p-5 rounded-2xl">
-          <div className="w-[60px] h-[60px] flex items-center justify-center bg-heroGreey rounded-[16px]">
-            2
-          </div>
+        <div className="relative w-[83px] h-[74px]">
+              <Image src={'/2.svg'} alt={"2"} className="w-[100%] h-[100%]" width={100} height={100} />
+            </div>
           <p className="text-[#2F2E40] font-semibold text-[20px] md:text-[25px] line-clamp-1 mt-3 ">
             Надежные решения LTL
           </p>
@@ -29,9 +31,9 @@ const About = () => {
           </p>
         </div>
         <div className="bg-#FBFBFB border p-5 rounded-2xl">
-          <div className="w-[60px] h-[60px] flex items-center justify-center bg-heroGreey rounded-[16px]">
-            3
-          </div>
+        <div className="relative w-[83px] h-[74px]">
+              <Image src={'/3.svg'} alt={"3"} className="w-[100%] h-[100%]" width={100} height={100} />
+            </div>
           <p className="text-[#2F2E40] font-semibold text-[20px] md:text-[25px] line-clamp-1 mt-3 ">
             Прозрачность и коммуникация
           </p>
@@ -45,9 +47,9 @@ const About = () => {
 
       <div className="w-[90%] mx-auto flex md:flex-row flex-col gap-y-12 mt-12 justify-between mb-20">
         <div className="bg-#FBFBFB border p-5 rounded-2xl w-[100%] md:w-[40%]">
-          <div className="w-[60px] h-[60px] flex items-center justify-center bg-heroGreey rounded-[16px]">
-            2
-          </div>
+        <div className="relative w-[83px] h-[74px]">
+              <Image src={'/4.svg'} alt={"4"} className="w-[100%] h-[100%]" width={100} height={100} />
+            </div>
           <p className="text-[#2F2E40] font-semibold text-[20px] md:text-[25px] line-clamp-1 mt-3 ">
             Постоянное совершенствование
           </p>

@@ -23,7 +23,7 @@ const Comments = () => {
                     </div>
                 </div>
                 <ReactStars value={5} edit={true} className='text-[20px]' />
-                <p className=''>Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
+                <p className="py-4 text-[17px] font-montserrat text-[#000]">Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
             </div>
 
             <div className="shadow-2xl p-5 rounded-lg border my-8 flex flex-col">
@@ -40,7 +40,7 @@ const Comments = () => {
                     </div>
                 </div>
                 <ReactStars value={5} edit={true} className='text-[20px]' />
-                <p className=''>Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
+                <p className="py-4 text-[17px] font-montserrat text-[#000]">Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
             </div>
 
             <div className="shadow-2xl p-5 rounded-lg border my-8 flex flex-col">
@@ -57,7 +57,7 @@ const Comments = () => {
                     </div>
                 </div>
                 <ReactStars value={5} edit={true} className='text-[20px]' />
-                <p className=''>Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
+                <p className="py-4 text-[17px] font-montserrat text-[#000]">Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
             </div>
 
             <div className="shadow-2xl p-5 rounded-lg border my-8 flex flex-col">
@@ -74,7 +74,7 @@ const Comments = () => {
                     </div>
                 </div>
                 <ReactStars value={5} edit={true} className='text-[20px]' />
-                <p className=''>Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
+                <p className="py-4 text-[17px] font-montserrat text-[#000]">Отличный сервис с отличной связью, услужливыми курьерами и очень конкурентоспособными ценами. </p>
             </div>
         </div>
     </div>

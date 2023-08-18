@@ -94,7 +94,7 @@ const Hero = () => {
                   </div>
                 </button>
               </div>
-              <p className="mt-2 lg:mt-3 lg:text-[20px] font-medium text-lightGreey">
+              <p className="mt-2 lg:mt-3 lg:text-[20px] font-medium text-lightGreey font-montserrat">
                 за последние 12 месяцев было доставлено более 36 000 отправлений
               </p>
             </div>
@@ -111,7 +111,7 @@ const Hero = () => {
             style={{zIndex: 2}}
           />
           </div>
-          <div className="absolute right-0 bottom-0 md:mb-5 w-[320px] lg:w-[850px] z-10">
+          <div className="absolute right-0 bottom-0 md:bottom-[42px] w-[320px] lg:w-[850px] z-10">
             <Image
               src={"/fullRight.svg"}
               width={850}

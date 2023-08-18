@@ -9,7 +9,7 @@ const Footer = () => {
   const changeLang = () => setIsLang(prev => !prev)
   const pathname = usePathname()
 
-  console.log(pathname)
+  // console.log(pathname)
 
   return (
     <div className={`flex relative ${pathname !== '/calculator' && 'mt-[330px]'}`}>

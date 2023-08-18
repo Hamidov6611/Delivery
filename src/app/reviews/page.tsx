@@ -41,8 +41,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
@@ -77,8 +77,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
@@ -113,8 +113,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
@@ -149,8 +149,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
@@ -184,8 +184,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
@@ -219,8 +219,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <ReactStars value={5} edit={true} className="text-[20px]" />
-          <p className="py-4">
+          <ReactStars value={5} edit={true} className="text-[20px] mt-3" />
+          <p className="py-4 text-[17px] font-montserrat text-[#000]">
             Отличный сервис с отличной связью, услужливыми курьерами и очень
             конкурентоспособными ценами.{" "}
           </p>
