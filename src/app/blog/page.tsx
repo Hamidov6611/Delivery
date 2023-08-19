@@ -14,7 +14,7 @@ const Blog = () => {
           Наш Блог
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 pt-8">
-          <div className="min-h-[540px] sm:min-h-[590px] relative border rounded-md shadow-xl">
+          <div className=" relative border rounded-md shadow-xl">
             <div className="relative">
               <Image
                 src={"/Blog1.svg"}
