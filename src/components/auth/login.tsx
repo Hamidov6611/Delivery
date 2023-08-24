@@ -7,15 +7,20 @@ import { FC, useState } from "react";
 interface propsLogin {
   setIsLogin: (value: boolean) => void;
   setIsRegister: (value: boolean) => void;
+  setIsForgotPassword: (value: boolean) => void
 }
 
-const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister }) => {
+const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister, setIsForgotPassword }) => {
   const [checkedproccess, setCheckedProccess] = useState<boolean>(false);
 
   const handleClick = () => {
     setIsRegister(true);
     setIsLogin(false);
   };
+  const handleForgotPassword = () => {
+    setIsLogin(false)
+    setIsForgotPassword(true)
+  }
   return (
     <div
       onClick={() => setIsLogin(false)}
@@ -98,7 +103,9 @@ const Login: FC<propsLogin> = ({ setIsLogin, setIsRegister }) => {
           </button>
         </div>
 
-        <button className="mt-4 text-[#23A879] text-[14px] font-montserrat">Я незнаю пароля</button>
+        <button 
+        onClick={handleForgotPassword}
+        className="mt-4 text-[#23A879] text-[14px] font-montserrat">Я незнаю пароля</button>
       </div>
     </div>
   );

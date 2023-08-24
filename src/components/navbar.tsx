@@ -23,6 +23,8 @@ const Navbar = () => {
 
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
+
+  console.log(isMenu)
   return (
     <div>
       <div
@@ -43,7 +45,7 @@ const Navbar = () => {
               <div className="flex">
                 <Link
                   href={"/services"}
-                  className="mr-2 hover:text-gray-900 text-[20px] text-white"
+                  className="mr-2 hover:text-gray-900 text-[20px] text-white font-medium"
                 >
                   Услуги
                 </Link>
@@ -75,12 +77,12 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="w-[55%] flex justify-end items-center">
-              <Link
-                href={"/"}
+              <button
+                onClick={() => setIsLogin(true)}
                 className="text-[18px] font-semibold text-white mr-5 hover:text-gray-900"
               >
                 Вход
-              </Link>
+              </button>
               <button
                 // href={"/"}
                 onClick={() => setIsRegister(prev => !prev)}
@@ -115,7 +117,7 @@ const Navbar = () => {
       )}
 
       {isLogin && (
-        <Login setIsLogin={setIsLogin} setIsRegister={setIsRegister}/>
+        <Login setIsLogin={setIsLogin} setIsRegister={setIsRegister} setIsForgotPassword={setIsForgotPassword}/>
       )}
 
       {isForgotPassword && (
@@ -190,8 +192,8 @@ const Navbar = () => {
       </div>
 
       {isMenu && (
-        <div className="w-[100%] h-[100vh] fixed flex flex-col justify-start items-start top-0 left-0 bg-[#050038] z-50 ">
-          <div className="w-[100%] mt-[80px] flex flex-col px-4">
+        <div className="w-[100%] h-[100vh] fixed flex flex-col justify-start items-start top-[60px] left-0 bg-[#050038] z-50 ">
+          <div className="w-[100%] mt-8 flex flex-col px-4">
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
             <div className="flex justify-between ">
               <Link
@@ -239,18 +241,30 @@ const Navbar = () => {
           </div>
 
           <div className="mt-9 w-[100%] flex justify-center pt-9 flex-col items-center">
-            <Link href={"/"} className="w-[200px]">
+            <button
+            onClick={() => {
+              setIsMenu(false) 
+              setIsRegister(true)}
+            } 
+            className="w-[200px]">
               <p className="bg-[#1348F9] text-white py-3 px-8 text-center rounded-full font-semibold mb-8  ">
                 Регистрация
               </p>
-            </Link>
+            </button>
 
-            <Link href={"/"} className="flex">
-              <p className="text-white text-md font-semibold mr-5">Логин</p>
+            <div className="flex">
+            <button 
+            onClick={() => {
+              setIsMenu(false) 
+              setIsLogin(true)}
+            }
+            >
+              <p className="text-white text-md font-semibold mr-5">Вход</p>
+            </button>
               <p className="text-white text-md font-semibold">
                 Связаться с нами!
               </p>
-            </Link>
+            </div>
 
             <div className="mt-8 flex items-center">
               <LanguageIcon
