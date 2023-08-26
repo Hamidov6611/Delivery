@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Ask, Comments, About, Hero, Hero2, Onas, Send, Sponsr } from "@/components";
 
 const HomePage = () => {
+  
   return (
     <div className="w-[100%]">
       <Hero />

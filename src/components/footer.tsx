@@ -12,7 +12,8 @@ const Footer = () => {
   // console.log(pathname)
 
   return (
-    <div className={`flex relative ${pathname !== '/calculator' && 'mt-[330px]'}`}>
+ <div>
+     <div className={`flex relative ${pathname !== '/calculator' && 'mt-[330px]'}`}>
      { pathname !== '/calculator' &&  ( <div className="w-[90%] md:w-[60%] mx-auto border h-[413px] bg-white ml-[5%] md:ml-[20%] absolute top-[-330px] rounded-lg shadow-2xl">
         <p className="text-center text-[#1348F9] text-[20px] sm:text-[24px] md:text-[32px] lg-text-[40px] mt-6 font-semibold">
           Связаться с нами!
@@ -280,6 +281,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+ </div>
   );
 };
 

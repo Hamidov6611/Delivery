@@ -24,7 +24,6 @@ const Navbar = () => {
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
 
-  console.log(isMenu)
   return (
     <div>
       <div
@@ -192,7 +191,7 @@ const Navbar = () => {
       </div>
 
       {isMenu && (
-        <div className="w-[100%] h-[100vh] fixed flex flex-col justify-start items-start top-[60px] left-0 bg-[#050038] z-50 ">
+        <div className="w-[100%] h-[100vh] fixed flex flex-col justify-start items-start top-[60px] left-0 bg-[#050038] z-50 lg:hidden">
           <div className="w-[100%] mt-8 flex flex-col px-4">
             <div className="h-[2px] w-[100%] bg-heroGreey rounded-lg mb-2 mt-2"></div>
             <div className="flex justify-between ">
