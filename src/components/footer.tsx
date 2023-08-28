@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
-const Footer = () => {
+const Footer = ():ReactNode => {
   const [isLang, setIsLang] = useState(false)
   const changeLang = () => setIsLang(prev => !prev)
   const pathname = usePathname()

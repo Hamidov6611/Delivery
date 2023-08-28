@@ -3,6 +3,7 @@
 const nextConfig = {
 //     i18n,
 //   reactStrictMode: true,
+// basePath: '/delivery'
 }
 
 module.exports = nextConfig

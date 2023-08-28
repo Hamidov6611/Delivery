@@ -37,7 +37,7 @@
     "dist/types/**/*.ts",
     "out/types/**/*.ts",
     "build/types/**/*.ts"
-  ],
+, "src/app/(dashboard)/layout.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -8,26 +8,28 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
-import React, { FC, useState } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
 import { ForgotPassword, Login, Register } from ".";
+import { usePathname } from "next/navigation";
 
 
 
-const Navbar = () => {
+const Navbar = (): ReactNode => {
   const [isMenu, setIsMenu] = useState(false);
   const handleClick = () => setIsMenu((prev) => !prev);
   const [isRegister, setIsRegister] = useState<boolean>(false)
   const [isLogin, setIsLogin] = useState<boolean>(false)
   const [isForgotPassword, setIsForgotPassword] = useState<boolean>(false)
-
+  const pathname = usePathname()
+  // console.log(pathname)
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
 
   return (
     <div>
       <div
-        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center`}
+        className={`h-[90px] lg:h-[133px] w-full bg-[#1348F9] hidden lg:flex items-center `}
       >
         <div className="w-[100%] md:w-[90%] mx-auto lg:flex items-center hidden">
           <Link href={"/"} className="w-[18%]">
