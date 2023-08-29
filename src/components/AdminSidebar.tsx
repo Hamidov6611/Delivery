@@ -1,12 +1,13 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import './side.css'
+import React, { useState } from "react";
+import "./side.css";
 import { usePathname } from "next/navigation";
-
 const AdminSidebar = () => {
-  const pathname = usePathname()
+  const [side1Drop, setSide1Drop] = useState(true);
+  const pathname = usePathname();
+  console.log(side1Drop);
   return (
     <div className="w-[20%] fixed top-0 left-0 h-[100vh] bg-[#2F2E40]">
       <div className="w-[100%] flex flex-col">
@@ -16,7 +17,15 @@ const AdminSidebar = () => {
           </p>
         </div>
         <div className="flex flex-col mt-8 gap-y-8">
-          <Link href={"/admin"} className={`${pathname == '/admin' ? 'bg-[#ffffff4d] py-4 text-white': 'text-heroLight'} nav-link flex justify-between items-center`}>
+          <Link
+            href={"/admin"}
+            key={"admin"}
+            className={`${
+              pathname == "/admin"
+                ? "bg-[#ffffff4d] py-4 text-white"
+                : "text-heroLight"
+            } nav-link flex justify-between items-center`}
+          >
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side1.svg" alt="side1" width={100} height={100} />
@@ -28,10 +37,16 @@ const AdminSidebar = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/client"} className={`${pathname == '/client'  ? 'bg-[#ffffff4d] py-4 text-heroLight': 'text-white'} nav-link flex justify-between items-center`}>
+          <div
+            className={`${
+              pathname == "/client"
+                ? "bg-[#ffffff4d] py-4 text-heroLight"
+                : "text-white"
+            } cursor-pointer nav-link flex justify-between items-center`}
+          >
             <div className="flex w-[100%] mx-6 items-center justify-between">
               <div className="flex">
-                <div className="w-7 h-6">
+                <div className="w-7 h-6 cursor-pointer">
                   <Image
                     src="/side2.svg"
                     alt="side1"
@@ -43,11 +58,23 @@ const AdminSidebar = () => {
                   <p className="ml-4 text-heroLight font-medium">Клиенты</p>
                 </div>
               </div>
-              <div className="w-2 h-2">
-                <Image src="/side.svg" alt="side1" width={100} height={100} />
-              </div>
+              {side1Drop ? (
+                <button
+                  className="w-2 h-2"
+                  onClick={() => setSide1Drop((prev) => !prev)}
+                >
+                  <Image src="/side.svg" alt="side1" width={100} height={100} />
+                </button>
+              ) : (
+                <button
+                  className="w-2 h-2"
+                  onClick={() => setSide1Drop((prev) => !prev)}
+                >
+                  <Image src="/back.svg" alt="side1" width={100} height={100} />
+                </button>
+              )}
             </div>
-          </Link>
+          </div>
           <Link href={"/admin"} className="nav-link flex">
             <div className="flex w-[100%] mx-6 items-center justify-between">
               <div className="flex">
@@ -71,7 +98,7 @@ const AdminSidebar = () => {
             </div>
           </Link>
           <Link href={"/admin"} className="nav-link flex">
-          <div className="flex w-[100%] mx-6 items-center justify-between">
+            <div className="flex w-[100%] mx-6 items-center justify-between">
               <div className="flex">
                 <div className="w-6 h-5">
                   <Image
@@ -82,7 +109,9 @@ const AdminSidebar = () => {
                   />
                 </div>
                 <div>
-                  <p className="ml-4 text-heroLight font-medium">Грузополучатели</p>
+                  <p className="ml-4 text-heroLight font-medium">
+                    Грузополучатели
+                  </p>
                 </div>
               </div>
               <div className="w-2 h-2">
@@ -91,7 +120,7 @@ const AdminSidebar = () => {
             </div>
           </Link>
           <Link href={"/admin"} className="nav-link flex">
-          <div className="flex w-[100%] mx-6 items-center justify-between">
+            <div className="flex w-[100%] mx-6 items-center justify-between">
               <div className="flex">
                 <div className="w-6 h-5">
                   <Image
@@ -116,21 +145,24 @@ const AdminSidebar = () => {
                 <Image src="/side5.svg" alt="side1" width={100} height={100} />
               </div>
               <div>
-                <p className="ml-4 text-heroLight font-medium">
-                Сообщения
-                </p>
+                <p className="ml-4 text-heroLight font-medium">Сообщения</p>
               </div>
             </div>
           </Link>
-          <Link href={"/wallet"} className={`${pathname == '/wallet' ? 'bg-[#ffffff4d] py-4 text-white': 'text-heroLight'} nav-link flex justify-between items-center`}>
+          <Link
+            href={"/wallet"}
+            className={`${
+              pathname == "/wallet"
+                ? "bg-[#ffffff4d] py-4 text-white"
+                : "text-heroLight"
+            } nav-link flex justify-between items-center`}
+          >
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side6.svg" alt="side1" width={100} height={100} />
               </div>
               <div>
-                <p className="ml-4 text-heroLight font-medium">
-                Кошелек
-                </p>
+                <p className="ml-4 text-heroLight font-medium">Кошелек</p>
               </div>
             </div>
           </Link>
@@ -140,21 +172,21 @@ const AdminSidebar = () => {
                 <Image src="/side7.svg" alt="side1" width={100} height={100} />
               </div>
               <div>
-                <p className="ml-4 text-heroLight font-medium">
-                Тарифы
-                </p>
+                <p className="ml-4 text-heroLight font-medium">Тарифы</p>
               </div>
             </div>
           </Link>
-          <Link href={"/admin"} className="nav-link flex">
+          <Link href={"/way"} className={`${
+              pathname == "/way"
+                ? "bg-[#ffffff4d] py-4 text-white"
+                : "text-heroLight"
+            } nav-link flex justify-between items-center`}>
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side8.svg" alt="side1" width={100} height={100} />
               </div>
               <div>
-                <p className="ml-4 text-heroLight font-medium">
-                В пути
-                </p>
+                <p className="ml-4 text-heroLight font-medium">В пути</p>
               </div>
             </div>
           </Link>
@@ -164,9 +196,7 @@ const AdminSidebar = () => {
                 <Image src="/side9.svg" alt="side1" width={100} height={100} />
               </div>
               <div>
-                <p className="ml-4 text-heroLight font-medium">
-                Настройки
-                </p>
+                <p className="ml-4 text-heroLight font-medium">Настройки</p>
               </div>
             </div>
           </Link>

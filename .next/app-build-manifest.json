@@ -1,37 +1,25 @@
 {
   "pages": {
-    "/(dashboard)/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/admin/page.js"
-    ],
     "/(dashboard)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(dashboard)/layout.css",
       "static/chunks/app/(dashboard)/layout.js"
     ],
-    "/(delivery)/page": [
+    "/(dashboard)/admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(delivery)/page.css",
-      "static/chunks/app/(delivery)/page.js"
-    ],
-    "/(delivery)/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(delivery)/layout.css",
-      "static/chunks/app/(delivery)/layout.js"
-    ],
-    "/(dashboard)/client/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/client/page.js"
+      "static/chunks/app/(dashboard)/admin/page.js"
     ],
     "/(dashboard)/wallet/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/wallet/page.js"
+    ],
+    "/(dashboard)/way/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/way/page.js"
     ]
   }
 }

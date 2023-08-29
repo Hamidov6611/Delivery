@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const AdminPage = () => {
-  // const [side, setSide] = useState()
   return (
     <div className="p-6 flex flex-col gap-y-8 z-0">
       <p className="text-[18px] sm:text-[20px] md:text-[32px] lg:text-[45px] text-lightGreey font-semibold">
@@ -19,6 +18,7 @@ const AdminPage = () => {
                 Клиенты
               </p>
             </div>
+           
           </div>
           <div className="absolute top-0 right-0">
             <div className="p-6">
@@ -45,21 +45,10 @@ const AdminPage = () => {
           <div className="absolute bottom-0 w-[100%] bg-[#85858537] h-[48px] flex items-center justify-center">
             <div className="flex justify-center w-[100%]">
               <p className="mr-8 text-[#ABAFB6]">Подробная информация</p>
-              <svg
-                width="27"
-                height="27"
-                viewBox="0 0 27 27"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.7778 17.3333L18.6111 13.5M18.6111 13.5L14.7778 9.66667M18.6111 13.5H8.38889M25 13.5C25 7.14873 19.8513 2 13.5 2C7.14873 2 2 7.14873 2 13.5C2 19.8513 7.14873 25 13.5 25C19.8513 25 25 19.8513 25 13.5Z"
-                  stroke="#ABAFB6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <svg width={27} height={27} viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14.7778 17.3333L18.6111 13.5M18.6111 13.5L14.7778 9.66667M18.6111 13.5H8.38889M25 13.5C25 7.14873 19.8513 2 13.5 2C7.14873 2 2 7.14873 2 13.5C2 19.8513 7.14873 25 13.5 25C19.8513 25 25 19.8513 25 13.5Z" stroke="#ABAFB6" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
             </div>
           </div>
         </div>
