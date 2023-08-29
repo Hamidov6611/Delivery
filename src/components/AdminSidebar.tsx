@@ -166,7 +166,11 @@ const AdminSidebar = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/admin"} className="nav-link flex">
+          <Link href={"/rates"} className={`${
+              pathname == "/rates"
+                ? "bg-[#ffffff4d] py-4 text-white"
+                : "text-heroLight"
+            } nav-link flex justify-between items-center`}>
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side7.svg" alt="side1" width={100} height={100} />
