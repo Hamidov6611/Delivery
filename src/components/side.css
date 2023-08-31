@@ -1,7 +1,0 @@
-.nav-link {
-    @apply text-gray-600 hover:text-gray-800; /* Default styling for navigation links */
-  }
-  
-  .nav-link.active {
-    @apply bg-white;
-  }
