@@ -1,1 +1,6 @@
-{}
+{
+  "/(dashboard)/shippers/page": "app/(dashboard)/shippers/page.js",
+  "/(dashboard)/adddispatch/page": "app/(dashboard)/adddispatch/page.js",
+  "/(dashboard)/addshippers/page": "app/(dashboard)/addshippers/page.js",
+  "/(dashboard)/dispatch/page": "app/(dashboard)/dispatch/page.js"
+}
