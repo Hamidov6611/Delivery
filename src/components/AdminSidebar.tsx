@@ -1,12 +1,12 @@
 "use client";
+
+
+
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
-import "./side.css";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 const AdminSidebar = () => {
-  const [side1Drop, setSide1Drop] = useState(true);
-  const pathname = usePathname();
+  const [side1Drop, setSide1Drop] = useState(false);
   console.log(side1Drop);
   return (
     <div className="w-[20%] fixed top-0 left-0 h-[100vh] bg-[#2F2E40]">
@@ -19,12 +19,8 @@ const AdminSidebar = () => {
         <div className="flex flex-col mt-8 gap-y-8">
           <Link
             href={"/admin"}
-            key={"admin"}
-            className={`${
-              pathname == "/admin"
-                ? "bg-[#ffffff4d] py-4 text-white"
-                : "text-heroLight"
-            } nav-link flex justify-between items-center`}
+            passHref
+            className={`text-heroLight nav-link flex justify-between items-center`}
           >
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
@@ -38,11 +34,7 @@ const AdminSidebar = () => {
             </div>
           </Link>
           <div
-            className={`${
-              pathname == "/client"
-                ? "bg-[#ffffff4d] py-4 text-heroLight"
-                : "text-white"
-            } cursor-pointer nav-link flex justify-between items-center`}
+            className={`text-heroLight cursor-pointer nav-link flex justify-between items-center`}
           >
             <div className="flex w-[100%] mx-6 items-center justify-between">
               <div className="flex">
@@ -59,19 +51,19 @@ const AdminSidebar = () => {
                 </div>
               </div>
               {side1Drop ? (
-                <button
+                <div
                   className="w-2 h-2"
                   onClick={() => setSide1Drop((prev) => !prev)}
                 >
                   <Image src="/side.svg" alt="side1" width={100} height={100} />
-                </button>
+                </div>
               ) : (
-                <button
+                <div
                   className="w-2 h-2"
                   onClick={() => setSide1Drop((prev) => !prev)}
                 >
-                  <Image src="/back.svg" alt="side1" width={100} height={100} />
-                </button>
+                  <Image src="/back.svg" alt="side2" width={100} height={100} />
+                </div>
               )}
             </div>
           </div>
@@ -151,11 +143,7 @@ const AdminSidebar = () => {
           </Link>
           <Link
             href={"/wallet"}
-            className={`${
-              pathname == "/wallet"
-                ? "bg-[#ffffff4d] py-4 text-white"
-                : "text-heroLight"
-            } nav-link flex justify-between items-center`}
+            className={`text-heroLight nav-link flex justify-between items-center`}
           >
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
@@ -166,11 +154,7 @@ const AdminSidebar = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/rates"} className={`${
-              pathname == "/rates"
-                ? "bg-[#ffffff4d] py-4 text-white"
-                : "text-heroLight"
-            } nav-link flex justify-between items-center`}>
+          <Link href={"/rates"} className={`text-heroLight nav-link flex justify-between items-center`}>
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side7.svg" alt="side1" width={100} height={100} />
@@ -180,11 +164,7 @@ const AdminSidebar = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/way"} className={`${
-              pathname == "/way"
-                ? "bg-[#ffffff4d] py-4 text-white"
-                : "text-heroLight"
-            } nav-link flex justify-between items-center`}>
+          <Link href={"/way"} className={`text-heroLight nav-link flex justify-between items-center`}>
             <div className="flex w-[100%] mx-6">
               <div className="w-7 h-6">
                 <Image src="/side8.svg" alt="side1" width={100} height={100} />
