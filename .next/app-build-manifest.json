@@ -1,10 +1,49 @@
 {
   "pages": {
+    "/(delivery)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(delivery)/page.css",
+      "static/chunks/app/(delivery)/page.js"
+    ],
+    "/(delivery)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(delivery)/layout.css",
+      "static/chunks/app/(delivery)/layout.js"
+    ],
+    "/(delivery)/calculator/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(delivery)/calculator/page.css",
+      "static/chunks/app/(delivery)/calculator/page.js"
+    ],
+    "/(dashboard)/admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/admin/page.js"
+    ],
     "/(dashboard)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(dashboard)/layout.css",
       "static/chunks/app/(dashboard)/layout.js"
+    ],
+    "/(dashboard)/addclient/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/addclient/page.js"
+    ],
+    "/(dashboard)/client/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(dashboard)/client/page.css",
+      "static/chunks/app/(dashboard)/client/page.js"
+    ],
+    "/(dashboard)/addshippers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/addshippers/page.js"
     ],
     "/(dashboard)/shippers/page": [
       "static/chunks/webpack.js",
@@ -12,21 +51,27 @@
       "static/css/app/(dashboard)/shippers/page.css",
       "static/chunks/app/(dashboard)/shippers/page.js"
     ],
+    "/(dashboard)/consignees/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(dashboard)/consignees/page.css",
+      "static/chunks/app/(dashboard)/consignees/page.js"
+    ],
     "/(dashboard)/adddispatch/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/adddispatch/page.js"
+    ],
+    "/(dashboard)/addconsignees/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/addconsignees/page.js"
     ],
     "/(dashboard)/dispatch/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(dashboard)/dispatch/page.css",
       "static/chunks/app/(dashboard)/dispatch/page.js"
-    ],
-    "/(dashboard)/addshippers/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/addshippers/page.js"
     ]
   }
 }
