@@ -16,7 +16,7 @@ const AdminSidebar = () => {
             Администратор
           </p>
         </div>
-        <div className="overflow-y-hidden">
+        <div className="">
           <div className="flex flex-col mt-8 gap-y-8 ">
             <Link
               href={"/admin"}
@@ -87,11 +87,11 @@ const AdminSidebar = () => {
               </div>
             </div>
             {!side1Drop && (
-              <div className="flex flex-col">
+              <div className="flex flex-col bg-[#888]">
                 <Link
                   href={"/addclient"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -103,7 +103,7 @@ const AdminSidebar = () => {
                 <Link
                   href={"/client"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c]  focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -164,11 +164,11 @@ const AdminSidebar = () => {
               </div>
             </div>
             {!side2Drop && (
-              <div className="flex flex-col">
+              <div className="flex flex-col bg-[#888]">
                 <Link
                   href={"/addshippers"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -182,7 +182,7 @@ const AdminSidebar = () => {
                 <Link
                   href={"/shippers"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-[#000] nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -246,11 +246,11 @@ const AdminSidebar = () => {
               </div>
             </div>
             {!side3Drop && (
-              <div className="flex flex-col">
+              <div className="flex flex-col bg-[#888]">
                 <Link
                   href={"/addconsignees"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -264,7 +264,7 @@ const AdminSidebar = () => {
                 <Link
                   href={"/consignees"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -328,11 +328,11 @@ const AdminSidebar = () => {
               </div>
             </div>
             {!side4Drop && (
-              <div className="flex flex-col">
+              <div className="flex flex-col bg-[#888]">
                 <Link
                   href={"/adddispatch"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
@@ -346,7 +346,7 @@ const AdminSidebar = () => {
                 <Link
                   href={"/dispatch"}
                   passHref
-                  className={`text-heroLight focus:text-white nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
+                  className={`text-[#0000009c] focus:text-black nav-link flex justify-between items-center focus:bg-[#48475874] py-3 `}
                 >
                   <div className="flex w-[100%] mx-6 ">
                     <div className="ml-2 mt-[6px]  w-[14px] h-[14px] rounded-full border-2 object-cover border-white"></div>
