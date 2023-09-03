@@ -1,15 +1,11 @@
-"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
 
 const AdminFooter = () => {
-    const [isLang, setIsLang] = useState(false)
-  const changeLang = () => setIsLang(prev => !prev)
   return (
     <div className="w-[100%]  bg-[#0F172A]">
         <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-8 pt-8">
-          <div className={`flex flex-col justify-center ${isLang && 'mt-[-107px]'}`}>
+          <div className={`flex flex-col justify-center}`}>
             <div className="w-[144px] [h-124px]">
               <Image
                 src={"/logo1.svg"}

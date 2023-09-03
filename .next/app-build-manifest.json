@@ -18,11 +18,6 @@
       "static/css/app/(delivery)/calculator/page.css",
       "static/chunks/app/(delivery)/calculator/page.js"
     ],
-    "/(dashboard)/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/admin/page.js"
-    ],
     "/(dashboard)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -33,6 +28,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/addclient/page.js"
+    ],
+    "/(dashboard)/admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/admin/page.js"
     ],
     "/(dashboard)/client/page": [
       "static/chunks/webpack.js",
@@ -57,15 +57,15 @@
       "static/css/app/(dashboard)/consignees/page.css",
       "static/chunks/app/(dashboard)/consignees/page.js"
     ],
-    "/(dashboard)/adddispatch/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/adddispatch/page.js"
-    ],
     "/(dashboard)/addconsignees/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/addconsignees/page.js"
+    ],
+    "/(dashboard)/adddispatch/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/adddispatch/page.js"
     ],
     "/(dashboard)/dispatch/page": [
       "static/chunks/webpack.js",

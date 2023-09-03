@@ -33,7 +33,6 @@ export default function AdminLayout({
               <AdminFooter />
             </footer>
           </div>
-          ;
         </body>
       </head>
     </html>
