@@ -1,7 +1,5 @@
 {
-  "/(dashboard)/addclient/page": "app/(dashboard)/addclient/page.js",
-  "/(dashboard)/dispatch/page": "app/(dashboard)/dispatch/page.js",
-  "/(dashboard)/addshippers/page": "app/(dashboard)/addshippers/page.js",
-  "/(dashboard)/client/page": "app/(dashboard)/client/page.js",
-  "/(dashboard)/addconsignees/page": "app/(dashboard)/addconsignees/page.js"
+  "/(delivery)/page": "app/(delivery)/page.js",
+  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js",
+  "/(dashboard)/message/page": "app/(dashboard)/message/page.js"
 }
