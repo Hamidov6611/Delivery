@@ -32,7 +32,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
     e.preventDefault()
     let postData = {username, password}
     const {msg} = await UseFetch("/a_api/admin_panel/user_profiles_views/", "POST", postData)
-    console.log(msg.accsess)
+    console.log(msg?.accsess)
     Cookies.set("token", JSON.stringify(msg?.accsess))
     Cookies.set("user", JSON.stringify(postData))
     setIsRegister(false)
