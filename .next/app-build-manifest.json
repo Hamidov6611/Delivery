@@ -1,5 +1,16 @@
 {
   "pages": {
+    "/(dashboard)/chat/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/chat/page.js"
+    ],
+    "/(dashboard)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(dashboard)/layout.css",
+      "static/chunks/app/(dashboard)/layout.js"
+    ],
     "/(delivery)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -12,16 +23,16 @@
       "static/css/app/(delivery)/layout.css",
       "static/chunks/app/(delivery)/layout.js"
     ],
-    "/(dashboard)/layout": [
+    "/(dashboard)/addclient/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(dashboard)/layout.css",
-      "static/chunks/app/(dashboard)/layout.js"
+      "static/chunks/app/(dashboard)/addclient/page.js"
     ],
-    "/(dashboard)/admin/page": [
+    "/(delivery)/calculator/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/admin/page.js"
+      "static/css/app/(delivery)/calculator/page.css",
+      "static/chunks/app/(delivery)/calculator/page.js"
     ],
     "/(dashboard)/message/page": [
       "static/chunks/webpack.js",

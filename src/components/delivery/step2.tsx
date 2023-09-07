@@ -1,33 +1,20 @@
 "use client";
 
 import { Switch } from "@mui/material";
-import { green } from "@mui/material/colors";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import {
-  FullscreenControl,
-  GeoObject,
-  GeolocationControl,
-  ListBox,
-  ListBoxItem,
-  Map,
-  Placemark,
-  YMaps,
-  ZoomControl,
-} from "react-yandex-maps";
-
+import { FullscreenControl, GeoObject, GeolocationControl, Map, YMaps, ZoomControl,} from "react-yandex-maps";
 
 const Step2 = () => {
   const [checked, setChecked] = useState(false);
-  const [startCity, setStartCity] = useState('');
-  const [endCity, setEndCity] = useState('');
-  const [routeCoordinates, setRouteCoordinates] = useState([]);
+  const [startCity, setStartCity] = useState<string>('');
+  const [endCity, setEndCity] = useState<string>('');
   let lot1: number[] = []
   let lot2: number[] = []
-  const [st, setSt] = useState()
-  const [st2, setSt2] = useState()
+  const [st, setSt] = useState<number[]>()
+  const [st2, setSt2] = useState<number[]>()
   const [view, setView] = useState(false)
-  const [distance, setDistance] = useState(null);
+  const [distance, setDistance] = useState<string | number>();
 
 
   const handleStartCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,18 +26,24 @@ const Step2 = () => {
   };
   const KEY = '96b947a45d33d7dc1c49af3203966408'
   const getData = async (city: string) => {
-    const base  = 'https://api.openweathermap.org/data/2.5/weather'
+    try {
+      const base  = 'https://api.openweathermap.org/data/2.5/weather'
     const query = `?q=${city}&units=metric&appid=${KEY}`
-    // loader(true)
     const req = await fetch(base + query)
     const data = await req.json()
-    // loader(false)
+    // console.log(data)
     let a = data.coord.lat
     let b = data.coord.lon
-    lot2 = [a, b]
-    setSt(lot2)
-    // setLot1(data?.coord)
+    lot1 = [a, b]
+    // console.log(typeof lot2)
+    setSt(lot1)
+    } catch (error) {
+      console.log(error)
+    }
 }
+useEffect(() => {
+  getData('London')
+}, [])
 const getData2 = async (city: string) => {
   const base  = 'https://api.openweathermap.org/data/2.5/weather'
   const query = `?q=${city}&units=metric&appid=${KEY}`
@@ -66,59 +59,62 @@ const getData2 = async (city: string) => {
   setSt2(lot2)
 }
 
-const calculateDistance = () => {
-  if(view) {
-    // 2 ta shahar uchun kordinatalar
-  let lat1 = parseFloat(String(st[0]).split('.')[0]);
-  let lon1 = parseFloat(String(st[1]).split('.')[1]);
-  let lat2 = parseFloat(String(st2[0]).split('.')[0]);
-  let lon2 = parseFloat(String(st2[1]).split('.')[1]);
-console.log(lat1)
-  // Haversine formulasi orqali masofani hisoblash
-  let R = 6371; // Yer radiusi (km)
-  let dLat = (lat2 - lat1) * (Math.PI / 180);
-  let dLon = (lon2 - lon1) * (Math.PI / 180);
-  let a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * (Math.PI / 180)) *
-      Math.cos(lat2 * (Math.PI / 180)) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-      let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      let result = R * c;
+// const calculateDistance = () => {
+//   if(view) {
+//     // 2 ta shahar uchun kordinatalar
+//   let lat1 = st && parseFloat(String(st[0]).split('.')[0]);
+//   let lon1 = st && parseFloat(String(st[1]).split('.')[1]);
+//   let lat2 = st2 &&  parseFloat(String(st2[0]).split('.')[0]);
+//   let lon2 = st2 && parseFloat(String(st2[1]).split('.')[1]);
+// console.log(lat1)
+//   // Haversine formulasi orqali masofani hisoblash
+//   let R = 6371; // Yer radiusi (km)
+//   let dLat = (lat2 - lat1) * (Math.PI / 180);
+//   let dLon = (lon2 - lon1) * (Math.PI / 180);
+//   let a =
+//     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+//     Math.cos(lat1 * (Math.PI / 180)) *
+//       Math.cos(lat2 * (Math.PI / 180)) *
+//       Math.sin(dLon / 2) *
+//       Math.sin(dLon / 2);
+//       let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+//       let result: string | number = R * c;
 
-  setDistance(result.toFixed(2)); // Masofani km da hisoblash va 2 desimal songacha qat'iy qilib olish
-  }
-};
+//   setDistance(result.toFixed(2)); // Masofani km da hisoblash va 2 desimal songacha qat'iy qilib olish
+//   }
+// };
 
-function calculateDistance2(lat1 = st[0], lon1 = st[1], lat2 = [0], lon2 = st2[1]) {
-  var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(lat2-lat1);  // deg2rad below
-  var dLon = deg2rad(lon2-lon1); 
-  var a = 
-    Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-    Math.sin(dLon/2) * Math.sin(dLon/2)
-    ; 
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  var d = R * c; // Distance in km
-  console.log(d)
+// function calculateDistance2(lat1: number, lon1: number, lat2: number, lon2: number) {
+//   var R = 6371; // Radius of the earth in km
+//   var dLat = deg2rad(lat2-lat1);  // deg2rad below
+//   var dLon = deg2rad(lon2-lon1); 
+//   var a = 
+//     Math.sin(dLat/2) * Math.sin(dLat/2) +
+//     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+//     Math.sin(dLon/2) * Math.sin(dLon/2)
+//     ; 
+//   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+//   var d = R * c; // Distance in km
+//   console.log(d)
 
-  return d;
-}
+//   return d;
+// }
+// lat1 = st[0], lon1 = st[1], lat2 = st2[0], lon2 = st2[1]
 
-
-function deg2rad(deg) {
-  return deg * (Math.PI/180)
-}
+// function deg2rad(deg: number) {
+//   console.log(typeof deg)
+//   return deg * (Math.PI/180)
+// }
 
   const getFullData = async (e: any) => {
     e.preventDefault()
     if(startCity.length > 0 && endCity.length > 0) {
       await getData(startCity)
       await getData2(endCity)
-      await calculateDistance()
-      await calculateDistance2()
+      //  calculateDistance()
+      //  if(st && st2) {
+      //   calculateDistance2(st[0], st[1], st2[0], st2[1])
+      //  }
       setView(true)
     }
 
@@ -127,7 +123,7 @@ function deg2rad(deg) {
 
 
 
-  console.log(st, st2, distance)
+  // console.log(st, st2, distance)
   // console.log(st && String(st[0])?.split('.')[0])
 
 
@@ -261,7 +257,6 @@ function deg2rad(deg) {
           </div> */}
           <YMaps>
             <div>
-              {st.length < 0 ? (
                 <Map
                 defaultState={{
                   center: [55.751574, 37.573856],
@@ -271,7 +266,7 @@ function deg2rad(deg) {
                 width={"100%"}
                 height={"550px"}
               >
-                {view && (
+                {(view && st && st2)&& (
                   <GeoObject
                   geometry={{
                     type: "LineString",
@@ -291,40 +286,10 @@ function deg2rad(deg) {
                 <GeolocationControl options={{ float: "right" }} />
                 <ZoomControl options={{ float: "right" }} />
               </Map>
-              ): (
-                <Map
-                defaultState={{
-                  center: st,
-                  zoom: 9,
-                
-                }}
-                width={"100%"}
-                height={"550px"}
-              >
-                {view && (
-                  <GeoObject
-                  geometry={{
-                    type: "LineString",
-                    coordinates: [
-                      st,
-                      st2,
-                    ],
-                  }}
-                  options={{
-                    geodesic: true,
-                    strokeWidth: 5,
-                    strokeColor: "#fc030f",
-                  }}
-                />
-                )}
-                <FullscreenControl options={{ float: "left" }} />
-                <GeolocationControl options={{ float: "right" }} />
-                <ZoomControl options={{ float: "right" }} />
-              </Map>
-              )}
+               
             </div>
           </YMaps>
-          <p className="text-[19px] text-lightGreey font-montserrat mt-6">{distance.length > 0 ? parseInt(distance) : ""} km</p>
+          {/* <p className="text-[19px] text-lightGreey font-montserrat mt-6">{distance ? parseInt(distance) + " km": ""}</p> */}
         </div>
       </div>
       <div className="mt-12 flex w-[100%] justify-center">

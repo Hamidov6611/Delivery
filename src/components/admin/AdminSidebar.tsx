@@ -12,8 +12,8 @@ const AdminSidebar = () => {
   return (
     <div className="w-[20%] fixed top-0 left-0  h-[100vh] bg-[#2F2E40]">
       <div className="w-[100%] flex flex-col">
-        <div className="h-[133px] bg-Primary flex justify-center items-center">
-          <p className="text-[30px] font-semibold text-white mb-4">
+        <div className="h-[100px] bg-Primary flex justify-center items-center">
+          <p className="text-[30px] font-semibold text-white mb-4 font-montserrat">
             Администратор
           </p>
         </div>

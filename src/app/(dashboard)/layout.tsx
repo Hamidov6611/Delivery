@@ -18,7 +18,7 @@ export default function AdminLayout({
       <head>
         <body>
           <div className="">
-            <header className="w-[100%] h-[133px] flex flex-row justify-between items-center">
+            <header className="w-[100%] h-[100px] flex flex-row justify-between items-center">
               <section className="w-[20%]">
                 <AdminSidebar />
               </section>
