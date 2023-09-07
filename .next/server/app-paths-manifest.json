@@ -1,7 +1,7 @@
 {
   "/(delivery)/page": "app/(delivery)/page.js",
+  "/(delivery)/blog/page": "app/(delivery)/blog/page.js",
   "/(delivery)/calculator/page": "app/(delivery)/calculator/page.js",
-  "/(dashboard)/chat/page": "app/(dashboard)/chat/page.js",
-  "/(dashboard)/message/page": "app/(dashboard)/message/page.js",
-  "/(dashboard)/addclient/page": "app/(dashboard)/addclient/page.js"
+  "/(delivery)/services/page": "app/(delivery)/services/page.js",
+  "/(delivery)/reviews/page": "app/(delivery)/reviews/page.js"
 }

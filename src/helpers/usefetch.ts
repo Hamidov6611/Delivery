@@ -1,12 +1,11 @@
-const BASE_URL = "http://192.168.183.1:8000/"
 export const UseFetch = async (
   url: string,
   Method: "POST" | "GET" | "PUT" | "DELETE",
   data?: any
-) => {  
-  console.log(url, Method, data)
-  switch (Method) {
-    case "POST":
+  ) => {  
+  const BASE_URL = "http://45.12.72.210:8000"
+  const postRequest = async () => {
+    try {
       const res = await fetch(BASE_URL + url, {
         method: Method,
         headers: { "Content-Type": "application/json" },
@@ -14,14 +13,24 @@ export const UseFetch = async (
       });
       console.log("POST METHOD")
       return res.json();
+     } catch (error) {  
+        console.log(error)
+     }
+  }
+  switch (Method) {
+    case "POST":
+      postRequest()
       break;
     case "GET":
-      const res2 = await fetch(BASE_URL + url, {
-        method: Method,
-        headers: { "Content-Type": "application/json" },
-      });
-      console.log("GET METHOD")
-      return res2.json();
+      try {
+        const res2 = await fetch(BASE_URL + url, {
+          method: Method,
+          headers: { "Content-Type": "application/json" },
+        });
+        return res2.json();
+      } catch (error) { 
+          console.log(error)
+      }
       break;
   }
 };
