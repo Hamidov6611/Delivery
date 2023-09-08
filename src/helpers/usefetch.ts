@@ -1,4 +1,6 @@
-const BASE_URL = "http://45.12.72.210:8000"
+import { METHODS } from "http";
+
+export const BASE_URL = "http://45.12.72.210:8000"
 export const UseFetch = async (
   url: string,
   Method: "POST" | "GET" | "PUT" | "DELETE",
@@ -8,7 +10,7 @@ export const UseFetch = async (
     case "POST":
      try {
       const res = await fetch(BASE_URL + url, {
-        method: "POST",
+        method: Method,
         body: JSON.stringify(data),
       });
       return res.json();

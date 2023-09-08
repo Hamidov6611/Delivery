@@ -1,10 +1,11 @@
 "use client";
 
 import { UseFetch } from "@/helpers/usefetch";
+import axios from "axios"
 import Cookies from 'js-cookie';
 import { Checkbox } from "@mui/material";
 import Image from "next/image";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 
 interface propsRegister {
   setIsRegister: (value: boolean) => void;
@@ -31,9 +32,11 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
   const postData = async (e: any) => {
     e.preventDefault()
     let postData = {username, password}
-    const {msg} = await UseFetch("/a_api/admin_panel/user_profiles_views/", "POST", postData)
-    console.log(msg?.accsess)
-    Cookies.set("token", JSON.stringify(msg?.accsess))
+    // const data = await UseFetch("/a_api/admin_panel/user_register_views/", "POST", postData)
+    // console.log(data?.msg?.accsess)
+    const {data} = await axios.post(`http://45.12.72.210:8000/a_api/admin_panel/user_register_views/`, postData)
+    console.log(data)
+    Cookies.set("token", JSON.stringify(data?.msg?.accsess))
     Cookies.set("user", JSON.stringify(postData))
     setIsRegister(false)
   }
@@ -92,7 +95,7 @@ const Register: FC<propsRegister> = ({ setIsRegister, setIsLogin }) => {
           <input
             value={password}
             onChange={handleOnchange2}
-            type="text"
+            type="password"
             className="border w-[100%] py-2 rounded-md text-[#667085] text-[14px] px-3 focus:outline-[#1348F9] font-medium"
             placeholder="Введите свой пароль"
           />

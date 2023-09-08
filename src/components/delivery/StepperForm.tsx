@@ -2,12 +2,51 @@
 import React, { useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Step1, Step2, Step3, Step4 } from "..";
+import { ProductType } from "@/interface";
+import axios from "axios";
+import { BASE_URL } from "@/helpers/usefetch";
 
 interface countProps {
   count: number;
 }
 const StepperForm = () => {
-  const [step, setStep] = useState({step1: true, step2: false, step3: false, step4: false, active1: false, active2: false, active3: false, active4: false});
+  const [step, setStep] = useState({
+    step1: true,
+    step2: false,
+    step3: false,
+    step4: false,
+    active1: false,
+    active2: false,
+    active3: false,
+    active4: false,
+  });
+  const [checked, setChecked] = useState<boolean>(false);
+  const [startCity, setStartCity] = useState<string>("");
+  const [endCity, setEndCity] = useState<string>("");
+  const [sendDate, setSendDate] = useState<string>("");
+  const [getDate, setGetDate] = useState<string>("");
+  const [id, setID] = useState<string>("");
+  const [st, setSt] = useState<number[]>();
+  const [st2, setSt2] = useState<number[]>();
+  const [id_cargo, setIdCargo] = useState<string>()
+  const [product, setProduct] = useState<ProductType>({name: "", count: 1, length: "", width: "", height: "", weight: ""})
+  const postData = {
+    location: {
+      name: st,
+      name2: st2,
+    },
+    city: {
+      name: startCity,
+      name2: endCity,
+    },
+    is_data: checked,
+    acceptance_date: sendDate || "",
+    delivery_date: getDate || "",
+    product,
+    id_service: id,
+    id_cargo
+  };
+  
   return (
     <div className="w-[96%] sm:w-[94%] mx-auto">
       <div className="flex w-[100%] items-center justify-center mb-2 pb-6">
@@ -144,11 +183,30 @@ const StepperForm = () => {
       </div>
       <form>
         {/* Step1 section */}
-        <div>{step.step1 && <Step1 />}</div>
+        <div>{step.step1 && <Step1 setID={setID} />}</div>
         {/* Step2 section */}
-        <div>{step.step2 && <Step2 />}</div>
+        <div>
+          {step.step2 && (
+            <Step2
+              checked={checked}
+              startCity={startCity}
+              endCity={endCity}
+              sendDate={sendDate}
+              getDate={getDate}
+              setChecked={setChecked}
+              setStartCity={setStartCity}
+              setEndCity={setEndCity}
+              setSendDate={setSendDate}
+              setGetDate={setGetDate}
+              st={st}
+              st2={st2}
+              setSt={setSt}
+              setSt2={setSt2}
+            />
+          )}
+        </div>
         {/* Step13section */}
-        <div>{step.step3 && <Step3 />}</div>
+        <div>{step.step3 && <Step3 setIdCargo={setIdCargo} product={product} setProduct={setProduct} postData={postData} />}</div>
         {/* Step4 section */}
         <div>{step.step4 && <Step4 />}</div>
       </form>

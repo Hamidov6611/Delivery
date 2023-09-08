@@ -1,7 +1,44 @@
-import Image from "next/image";
+"use client";
 
-const Step1 = () => {
-  return (
+import { BASE_URL } from "@/helpers/usefetch";
+import Image from "next/image";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { cardProps } from "@/interface";
+import Loader from "../Loader";
+
+interface Step1Props {
+  setID: (value: string) => void;
+}
+
+const Step1 = ({ setID }: Step1Props) => {
+  const [data, setData] = useState([]);
+  const [loader, setLoader] = useState<boolean>(true)
+  const getCardData = async () => {
+    try {
+      // const config = {
+      //   headers: {
+      //     Authorization: "Bearer " + JSON.parse(Cookies.get("token")) || "",
+      //   },
+      // };
+      const { data } = await axios.get(
+        `${BASE_URL}/a_api/admin_panel/service_get_post_views/`
+        );
+        setData(data?.data?.results);
+        setLoader(false)
+        console.log(data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+
+  useEffect(() => {
+    getCardData();
+  }, []);
+
+  return loader ? <Loader /> : (
     <div className="sm:mt-12">
       <p className="text-center font-montserrat font-semibold text-[17px] lg:hidden text-lightGreey">
         Категория товара
@@ -15,15 +52,21 @@ const Step1 = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 ">
-        <div className="border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
-          <div className="flex flex-col  justify-center items-center">
-            <Image src={"/cal1.svg"} width={100} height={100} alt={"cal1"} />
-            <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
-              Падонны
-            </p>
+        {data?.map((item: cardProps, index) => (
+          <div
+          onClick={() => setID(item?.id)}
+            key={index}
+            className="focus:border-Primary hover:border-Primary cursor-pointer hover:placeholder:border-2 border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center"
+          >
+            <div className="flex flex-col  justify-center items-center">
+              <Image src={"/cal1.svg"} width={100} height={100} alt={"cal1"} />
+              <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
+                {item?.translations?.ru?.name}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
+        ))}
+        {/* <div className="focus:border-Primary hover:border-Primary cursor-pointer hover:placeholder:border-2 border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
           <div className="flex flex-col  justify-center items-center">
             <Image src={"/cal2.svg"} width={100} height={100} alt={"cal1"} />
             <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
@@ -31,7 +74,7 @@ const Step1 = () => {
             </p>
           </div>
         </div>
-        <div className="border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
+        <div className="focus:border-Primary hover:border-Primary cursor-pointer hover:placeholder:border-2 border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
           <div className="flex flex-col  justify-center items-center">
             <Image src={"/cal3.svg"} width={100} height={100} alt={"cal1"} />
             <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
@@ -39,7 +82,7 @@ const Step1 = () => {
             </p>
           </div>
         </div>
-        <div className="border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
+        <div className="focus:border-Primary hover:border-Primary cursor-pointer hover:placeholder:border-2 border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
           <div className="flex flex-col  justify-center items-center">
             <Image src={"/cal4.svg"} width={100} height={100} alt={"cal1"} />
             <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
@@ -47,14 +90,19 @@ const Step1 = () => {
             </p>
           </div>
         </div>
-        <div className="border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
+        <div className="focus:border-Primary hover:border-Primary cursor-pointer hover:placeholder:border-2 border h-[220px] sm:h-[320px] rounded-lg shadow-xl flex justify-center items-center">
           <div className="flex flex-col  justify-center items-center">
             <Image src={"/cal5.svg"} width={100} height={100} alt={"cal1"} />
             <p className="mt-3 text-center font-medium text-[20px] sm:text-[25px] text-lightGreey">
               Небольшие переезды
             </p>
           </div>
-        </div>
+        </div> */}
+      </div>
+      <div className="flex w-full justify-end text-white ">
+        <button className="py-2 px-6 text-[18px] font-montserrat bg-Primary rounded-md mt-8 md:mt-0">
+          Следующий
+        </button>
       </div>
     </div>
   );

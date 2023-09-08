@@ -1,7 +1,5 @@
 {
   "/(delivery)/page": "app/(delivery)/page.js",
-  "/(delivery)/blog/page": "app/(delivery)/blog/page.js",
-  "/(delivery)/calculator/page": "app/(delivery)/calculator/page.js",
-  "/(delivery)/services/page": "app/(delivery)/services/page.js",
-  "/(delivery)/reviews/page": "app/(delivery)/reviews/page.js"
+  "/(delivery)/reviews/page": "app/(delivery)/reviews/page.js",
+  "/(delivery)/calculator/page": "app/(delivery)/calculator/page.js"
 }

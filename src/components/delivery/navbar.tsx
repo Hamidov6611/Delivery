@@ -12,8 +12,15 @@ import React, { FC, ReactNode, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
 import { ForgotPassword, Login, Register } from "..";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import Cookies from 'js-cookie';
+import { BASE_URL } from "@/helpers/usefetch";
+import axios from "axios";
 
-
+interface userProps {
+  username: string,
+   password: string
+}
 
 const Navbar = (): ReactNode => {
   const [isMenu, setIsMenu] = useState(false);
@@ -25,7 +32,26 @@ const Navbar = (): ReactNode => {
   // console.log(pathname)
   const [isLang, setIsLang] = useState(false);
   const changeLang = () => setIsLang((prev) => !prev);
+  const [isUser, setIsUser] = useState<boolean>(false)
 
+  let [data, setData] = useState<userProps>()
+
+
+
+const getData = async () => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + JSON.parse(Cookies.get("token")) || ""
+    }
+  }
+  const {data} = await axios.get(`${BASE_URL}/a_api/admin_panel/user_profiles_views/`, config)
+  // console.log(data)
+  setData(data)
+}
+
+useEffect(() => {
+  getData()
+}, [])
   return (
     <div>
       <div
@@ -84,13 +110,20 @@ const Navbar = (): ReactNode => {
               >
                 Вход
               </button>
-              <button
+              { data?.username?.length > 0 ? 
+              
+              
+              (
+                <button className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]">{data?.username}</button>
+              ):
+              (<button
                 // href={"/"}
                 onClick={() => setIsRegister(prev => !prev)}
                 className="font-bold mr-5 text-[17px] border text-white p-3 rounded-md  hover:border-transparent transition duration-200 ease-in-out hover:bg-white hover:text-[#1348F9]"
               >
                 Регистрация
-              </button>
+              </button>)
+              }
               <div className="flex">
                 <Image
                   src={"/ru.svg"}
