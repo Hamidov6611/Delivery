@@ -1,5 +1,3 @@
 {
-  "/(delivery)/page": "app/(delivery)/page.js",
-  "/(delivery)/reviews/page": "app/(delivery)/reviews/page.js",
-  "/(delivery)/calculator/page": "app/(delivery)/calculator/page.js"
+  "/(delivery)/page": "app/(delivery)/page.js"
 }

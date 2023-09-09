@@ -6,22 +6,11 @@
       "static/css/app/(delivery)/layout.css",
       "static/chunks/app/(delivery)/layout.js"
     ],
-    "/(delivery)/calculator/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(delivery)/calculator/page.css",
-      "static/chunks/app/(delivery)/calculator/page.js"
-    ],
     "/(delivery)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(delivery)/page.css",
       "static/chunks/app/(delivery)/page.js"
-    ],
-    "/(delivery)/reviews/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(delivery)/reviews/page.js"
     ]
   }
 }
